@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Syne:wght@400..800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Syne", sans-serif;
+  font-size: 1rem;
+  background-color: #006769;
+  color: #40a578;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Card */
+.container {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  margin-inline: 1, 5rem;
+  padding-block: 7rem;
+}
+
+.card-article {
+  position: relative;
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+}
+
+.card-profile,
+.card_mask {
+  width: 100px;
+  height: 100px;
+  background-color: #40a578;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  border: 4px solid #9dde8b;
+  z-index: 5;
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+/* .card-profile img,
+.card-mask img {
+  width: 95px;
+} */
+
+.card-tooltip {
+  width: 300px;
+  position: absolute;
+  bottom: -2rem;
+  padding-bottom: 5rem;
+  transition: opacity 0.4s, bottom 0.4s cubic-bezier(0.6, -0.5, 0.3, 1.5);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.card-data img {
+  border-radius: 20px;
+}
+
+.card-content {
+  position: relative;
+  width: calc(100vw - 3re);
+  background-color: rgb(214, 212, 212);
+  box-shadow: 0 16px 32px hsl(230, 50%, 20%, 0.1);
+  padding: 2rem 1.5rem;
+  border-radius: 1.5rem;
+}
+
+.card-content::after {
+  content: "";
+  width: 32px;
+  height: 32px;
+  background-color: rgb(214, 212, 212);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.75rem;
+  margin-inline: auto;
+  border-radius: 0.25rem;
+  rotate: 45deg;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #40a578;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-header span {
+  color: #006769;
+  font-weight: 500;
+}
+
+.card-social {
+  display: flex;
+  column-gap: 0.75rem;
+}
+
+.card-social a {
+  font-size: 1.25rem;
+  color: black;
+}
+
+.card-img {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 0 auto 1rem;
+}
+
+/* .card-status {
+  width: 12px;
+  background-color: red;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  border-radius: 50%;
+  border: 2px solid #9dde8b;
+} */
+
+.card-data {
+  text-align: center;
+}
+
+.card-name {
+  color: black;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.card-profession {
+  font-size: medium;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.card-button {
+  display: inline-flex;
+  column-gap: 0.5rem;
+  color: #006769;
+  font-weight: 500;
+}
+
+.card-button i {
+  font-size: 1.25rem;
+}
+
+/* animasi profile */
+.card-article:hover .card-profile {
+  transform: scale(0.8);
+  opacity: 0.7;
+}
+
+/* show card */
+.card-article:hover .card-tooltip {
+  opacity: 1;
+  pointer-events: initial;
+  bottom: 4rem;
+}
